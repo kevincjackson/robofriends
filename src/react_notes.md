@@ -8,6 +8,7 @@ The philosophy with React is that the Component is king.
 Since modern interaction couples CSS and JS anyway, simply acknowledge that fact, and redraw our separation of concern around a consistent piece: the component.
 
 ## React Classes are Functions
+
 React Class
 ```js
 class Hello extends Component {
@@ -18,6 +19,7 @@ class Hello extends Component {
     }
 }
 ```
+
 Function
 ```js
 const Hello = (props) => {

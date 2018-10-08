@@ -11,14 +11,10 @@ import './index.css';
 // CSS Library
 import 'tachyons';
 
-import robots from './robots'
-import Cardlist from './Cardlist';
+import App from './App';
 
 // Render the app
-ReactDOM.render(
-  <Cardlist robots={robots} />
-  ,document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
