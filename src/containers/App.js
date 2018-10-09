@@ -1,7 +1,8 @@
-import Cardlist from './Cardlist';
-import Scroll from './Scroll';
+import './App.css'
+import Cardlist from '../components/Cardlist';
 import React, { Component } from 'react';
-import SearchBox from './SearchBox';
+import Scroll from '../components/Scroll';
+import SearchBox from '../components/SearchBox';
 
 class App extends Component {
   constructor() {
@@ -15,7 +16,7 @@ class App extends Component {
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then(resp => resp.json())
-      .then(users => this.setState({ robots: users}));
+      .then(users => this.setState({ robots: users }));
   };
 
   onSearchChange = (event) => {
@@ -23,8 +24,9 @@ class App extends Component {
   }
 
   filteredRobots = () => {
-    return this.state.robots.filter((robot) => {
-        return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+    const { robots, searchfield } = this.state;
+    return robots.filter((robot) => {
+        return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     });
   }
 

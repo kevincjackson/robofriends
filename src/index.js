@@ -11,7 +11,7 @@ import './index.css';
 // CSS Library
 import 'tachyons';
 
-import App from './App';
+import App from './containers/App';
 
 // Render the app
 ReactDOM.render(<App />, document.getElementById('root'));
