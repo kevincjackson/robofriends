@@ -3,7 +3,7 @@
 ## Features
 * Uses React components, containers, and children.
 * Gets data from an two APIs.
-* Implements live Search
+* Implements live Search.
 
 ## Credits
 * Project created by Andrei Neagoie <https://www.udemy.com/the-complete-web-developer-in-2018/>
