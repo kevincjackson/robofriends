@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import robots from './robots';
 import SearchBox from './SearchBox';
 import Cardlist from './Cardlist';
 
@@ -7,17 +6,23 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      robots: robots,
+      robots: [],
       searchfield: ''
     }
   }
+
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(resp => resp.json())
+      .then(users => this.setState({ robots: users}));
+  };
 
   onSearchChange = (event) => {
       this.setState({ searchfield: event.target.value });
   }
 
   filteredRobots = () => {
-    return robots.filter((robot) => {
+    return this.state.robots.filter((robot) => {
         return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
     });
   }
